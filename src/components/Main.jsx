@@ -1,18 +1,20 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
 import IngredientsList from "./IngredientsList";
+import { generateRecipe } from "../ai";
 
 function Main() {
     const [ingredients, setIngredients] = useState([]);
-    const [recipeShown, setRecipeShown] = useState(false);
+    const [recipe, setRecipe] = useState("");
 
     function handleSubmit(formData){
         const newIngredient = formData.get("ingredient");
         setIngredients(prevIngredients => [...prevIngredients, newIngredient]);
     }
 
-    function handleGetRecipe(){
-        setRecipeShown(true);
+    async function handleGetRecipe(){
+        const recipeMarkdown = await generateRecipe(ingredients);
+        setRecipe(recipeMarkdown);
     }
 
     return (
@@ -25,7 +27,7 @@ function Main() {
 
             <IngredientsList ingredients={ingredients} handleGetRecipe={handleGetRecipe} />
 
-            {recipeShown && <Recipe />}
+            {recipe && <Recipe recipe={recipe} />}
 
         </main> 
     )
