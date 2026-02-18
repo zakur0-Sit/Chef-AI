@@ -2,6 +2,8 @@
 
 A React + Vite application that helps you generate recipes based on the ingredients you have on hand. This project uses Tailwind CSS for styling and includes Hugging Face libraries for AI integration.
 
+<img width="1880" height="1190" alt="screencapture-localhost-5173-2026-02-19-00_14_37" src="https://github.com/user-attachments/assets/dfd18bae-ba52-45c8-9e1b-20fa2db29eef" />
+
 ## 🚀 Features
 
 - **Ingredient Management**: Add ingredients to your pantry list.
