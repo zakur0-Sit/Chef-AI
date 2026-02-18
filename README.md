@@ -26,7 +26,16 @@ A React + Vite application that helps you generate recipes based on the ingredie
    npm install
    ```
 
-3. **Run the development server**:
+3. **Configure Hugging Face API**:
+   - Create an account on [Hugging Face](https://huggingface.co/).
+   - Navigate to [Settings > Access Tokens](https://huggingface.co/settings/tokens) and create a new token with "Read" permissions.
+   - Create a `.env` file in the root directory of your project (copy `.env.example` if available).
+   - Add your token to the `.env` file:
+     ```
+     VITE_AI_API_KEY=hf_your_generated_token_here
+     ```
+
+4. **Run the development server**:
    ```bash
    npm run dev
    ```
